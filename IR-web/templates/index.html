@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .section {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            display: none;
+        }
+
+        .search-form {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        input[type="text"] {
+            padding: 10px 15px;
+            width: 80%;
+            border: 1px solid #dfe1e5;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            width: 90%;
+            height: 400px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .full-width {
+            display: block;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .or-text {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section" id="search-query" style="display: block;">
+        <div class="search-form">
+            <form action="/search" method="post">
+                <input type="text" name="search_query" placeholder="Search Using Query">
+                <br>
+                <input type="submit" value="Search">
+            </form>
+            <p class="or-text">OR</p>
+            <button onclick="document.getElementById('search-query').style.display = 'none'; document.getElementById('article-search').style.display = 'block';">Article Search</button>
+        </div>
+    </div>
+
+    <div class="section article-search" id="article-search">
+        <div class="search-form">
+            <form action="/article-search" method="post">
+                <textarea name="article_text" placeholder="Enter your article text"></textarea>
+                <br>
+                <input type="submit" class="full-width" value="Search Using Articles">
+            </form>
+            <p class="or-text">OR</p>
+            <button onclick="document.getElementById('article-search').style.display = 'none'; document.getElementById('search-query').style.display = 'block';">Query Search</button>
+        
+        </div>
+    </div>
+</body>
+</html>

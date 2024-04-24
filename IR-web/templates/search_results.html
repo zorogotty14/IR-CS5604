@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        li {
+            background-color: #ffffff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .details {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <p>Your search query: {{ query }}</p>
+    
+    <h2>Results:</h2>
+    <ul>
+        {% for article in results['news'] %}
+            <li>
+                <a href="{{ article.url }}"><strong>{{ article.title }}</strong></a>
+                <p>{{ article.short_description }}</p>
+                <p>{{ article.text }}</p>
+                <p>Publisher: {{ article.publisher.title }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
