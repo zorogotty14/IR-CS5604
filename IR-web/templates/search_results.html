@@ -54,13 +54,26 @@
 </head>
 <body>
     <h1>Search Results</h1>
-    <p>Your search query: {{ query }}</p>
+    <p>Your search query: "{{ query }}"</p>
     
-    <h2>Results:</h2>
+    <h2>Database Results:</h2>
     <ul>
-        {% for article in results['news'] %}
+        {% for article in db_results %}
+            <li>
+                <strong>{{ article.title }}</strong>
+                <button>text</button>
+                <p>{{ article.content }}</p>
+                <p>Relevance Score: {{ article.score }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Web API Results:</h2>
+    <ul>
+        {% for article in web_results['news'] %}
             <li>
                 <a href="{{ article.url }}"><strong>{{ article.title }}</strong></a>
+                <button>text</button>
                 <p>{{ article.short_description }}</p>
                 <p>{{ article.text }}</p>
                 <p>Publisher: {{ article.publisher.title }}</p>
