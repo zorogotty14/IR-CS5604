@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 # Set a secret key for your application
-app.secret_key = 'adjdaondpimppoepskop23'
+app.secret_key = 'app_secret_key'
 
 API_URL = "https://newsnow.p.rapidapi.com/newsv2"
 API_KEY = "add your API key"
