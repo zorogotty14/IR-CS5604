@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'adjdaondpimppoepskop23'
 
 API_URL = "https://newsnow.p.rapidapi.com/newsv2"
-API_KEY = "0a0b72559emshc1ca09f720d7505p15e229jsnfcf4f42dc10a"
+API_KEY = "add your API key"
 
 
 @app.route('/search', methods=['POST'])
