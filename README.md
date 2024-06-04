@@ -10,7 +10,7 @@ Link for Video Demo:
 https://drive.google.com/file/d/1WxlzzcOto3dZXyN7oxUGpRMzMUFVU6P2/view?usp=drive_link
 
 SYSTEM ARCHITECTURE
-(image.png)
+![screenshot](image.png)
 
 METHODOLOGY
 Dataset – subset of BIGNEWS.
@@ -21,16 +21,19 @@ Quantization to gguf – Llama.cpp
 Metrics – sklearn
 GPU – A100 (80 GB), RTX 3090 (24 GB), Tesla T4 (16 GB)
 
-(image-1.png)
+![screenshot](image-1.png)
 
 Modification on CARP (Clues and Reasoning Prompt) [Sun et al.]
 
 Text Classification via Large Language Models -https://openreview.net/forum?id=RkqyZj5QNN
 
-(image-2.png)
+![screenshot](image-2.png)
 
 Model Evaluation
-(image-3.png)
+
+![screenshot](image-3.png)
+
+
 also we have used LLM to give clues and reasoning for the bias detection.
 LLM model can be found here 
 https://huggingface.co/zz-xx
